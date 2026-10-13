@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "CuddleNine — 0 to 12 Months Baby Care Guide",
+      "hasCanvas": false,
+      "bodyTextLen": 1838,
+      "bodyTextHash": "d4a4397db19969983911e9ffa1fd5ca41d0323bca580bab6f21c705a6ac75271",
+      "bodyTextPrefix": "CuddleNine Get the guide Little Care, Big Love Your baby’s first",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "CuddleNine — 0 to 12 Months Baby Care Guide",
+      "hasCanvas": false,
+      "bodyTextLen": 1838,
+      "bodyTextHash": "d4a4397db19969983911e9ffa1fd5ca41d0323bca580bab6f21c705a6ac75271",
+      "bodyTextPrefix": "CuddleNine Get the guide Little Care, Big Love Your baby’s first",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

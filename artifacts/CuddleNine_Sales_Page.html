@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CuddleNine — Complete 0 to 12 Months Baby Care Guide</title>
+  <meta name="description" content="The complete practical guide for new parents. First 24 hours, month-by-month feeding, sleep, milestones, vaccination chart, red flags & printable checklists." />
+  <style>
+    :root {
+      --blue: #3B82F6;
+      --blue-dark: #1E40AF;
+      --pink: #EC4899;
+      --pink-light: #FDF2F8;
+      --soft-blue: #EFF6FF;
+      --text: #1F2937;
+      --muted: #6B7280;
+      --bg: #FAFAFA;
+      --white: #FFFFFF;
+      --radius: 16px;
+      --shadow: 0 10px 40px rgba(0,0,0,0.08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: var(--white);
+      border-bottom: 1px solid #F3F4F6;
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--blue-dark);
+    }
+    .logo span { color: var(--pink); }
+    .cta-btn {
+      background: linear-gradient(135deg, var(--pink), #F472B6);
+      color: white;
+      padding: 12px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 15px rgba(236, 72, 153, 0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(236, 72, 153, 0.45);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(180deg, #FDF2F8 0%, #EFF6FF 50%, var(--bg) 100%);
+      padding: 60px 0 80px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: white;
+      border: 1px solid #FBCFE8;
+      color: var(--pink);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--blue-dark);
+      margin-bottom: 16px;
+    }
+    .hero h1 span { color: var(--pink); }
+    .hero-sub {
+      font-size: 1.2rem;
+      color: var(--muted);
+      max-width: 620px;
+      margin: 0 auto 32px;
+    }
+    .hero-cta {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .price-tag {
+      font-size: 1.1rem;
+      color: var(--muted);
+    }
+    .price-tag strong {
+      font-size: 1.8rem;
+      color: var(--text);
+    }
+    .price-tag .old {
+      text-decoration: line-through;
+      color: #9CA3AF;
+      margin-right: 8px;
+    }
+    .guarantee {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    /* ===== FEATURES GRID ===== */
+    .features {
+      padding: 60px 0;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--blue-dark);
+      margin-bottom: 12px;
+    }
+    .section-sub {
+      text-align: center;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 40px;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+    .feature-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .feature-card:hover { transform: translateY(-4px); }
+    .feature-icon {
+      font-size: 2.2rem;
+      margin-bottom: 14px;
+    }
+    .feature-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .feature-card p {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    /* ===== WHAT'S INSIDE ===== */
+    .inside {
+      background: white;
+      padding: 70px 0;
+    }
+    .inside-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      .inside-grid { grid-template-columns: 1fr; }
+    }
+    .inside-list {
+      list-style: none;
+    }
+    .inside-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+    }
+    .check {
+      background: var(--pink);
+      color: white;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .mockup {
+      background: linear-gradient(135deg, #FDF2F8, #EFF6FF);
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .mockup-placeholder {
+      background: white;
+      border-radius: 12px;
+      padding: 40px 20px;
+      font-size: 1.1rem;
+      color: var(--muted);
+      border: 2px dashed #F9A8D4;
+    }
+
+    /* ===== BENEFITS ===== */
+    .benefits {
+      padding: 70px 0;
+      background: var(--soft-blue);
+    }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+    .benefit-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+    .benefit-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+      color: var(--blue-dark);
+    }
+    .benefit-card p {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    /* ===== PRICING ===== */
+    .pricing {
+      padding: 80px 0;
+      text-align: center;
+    }
+    .price-card {
+      background: white;
+      max-width: 480px;
+      margin: 0 auto;
+      border-radius: 24px;
+      padding: 40px 36px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      border: 3px solid var(--pink);
+      position: relative;
+    }
+    .price-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--pink);
+      color: white;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 6px 18px;
+      border-radius: 50px;
+    }
+    .price-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+    .big-price {
+      font-size: 3.2rem;
+      font-weight: 800;
+      color: var(--blue-dark);
+      margin: 12px 0;
+    }
+    .big-price span {
+      font-size: 1.2rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .price-features {
+      text-align: left;
+      margin: 24px 0 32px;
+      list-style: none;
+    }
+    .price-features li {
+      padding: 8px 0;
+      border-bottom: 1px solid #F3F4F6;
+      font-size: 0.98rem;
+    }
+    .price-features li:last-child { border-bottom: none; }
+
+    /* ===== FAQ ===== */
+    .faq {
+      padding: 70px 0;
+      background: white;
+    }
+    .faq-item {
+      max-width: 700px;
+      margin: 0 auto 16px;
+      background: var(--bg);
+      border-radius: 12px;
+      padding: 20px 24px;
+    }
+    .faq-item h4 {
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--blue-dark);
+    }
+    .faq-item p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* ===== FINAL CTA ===== */
+    .final-cta {
+      background: linear-gradient(135deg, var(--blue-dark), var(--pink));
+      color: white;
+      text-align: center;
+      padding: 70px 20px;
+    }
+    .final-cta h2 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .final-cta p {
+      opacity: 0.9;
+      margin-bottom: 28px;
+      font-size: 1.1rem;
+    }
+    .final-cta .cta-btn {
+      background: white;
+      color: var(--pink);
+      font-size: 1.1rem;
+      padding: 16px 40px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #111827;
+      color: #9CA3AF;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9rem;
+    }
+    footer strong { color: white; }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .hero { padding: 40px 0 50px; }
+      .price-card { padding: 30px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container header-inner">
+      <div class="logo">Cuddle<span>Nine</span></div>
+      <a href="#buy" class="cta-btn">Get the Guide →</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">👶 For New Parents • 0–12 Months</div>
+      <h1>Your Baby’s First Year,<br><span>Guided with Love</span></h1>
+      <p class="hero-sub">
+        The complete practical e-book that tells new parents exactly what to do, what to feed, what to apply, and when to worry — month by month.
+      </p>
+      <div class="hero-cta">
+        <a href="#buy" class="cta-btn" style="font-size: 1.15rem; padding: 16px 40px;">
+          Download Instantly — ₹299
+        </a>
+        <div class="price-tag">
+          <span class="old">₹999</span>
+          <strong>₹299</strong> only
+        </div>
+        <p class="guarantee">✅ Instant PDF download &nbsp;•&nbsp; 22 beautifully designed pages &nbsp;•&nbsp; Lifetime access</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title">Everything New Parents Need</h2>
+      <p class="section-sub">No fluff. Just clear, practical guidance for every stage of your baby’s first year.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🕐</div>
+          <h3>First 24 Hours Guide</h3>
+          <p>Hour-by-hour instructions for the most critical time after birth.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🍼</div>
+          <h3>0–12 Months Feeding</h3>
+          <p>Exactly what to feed (and avoid) every single month.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">😴</div>
+          <h3>Sleep Schedules</h3>
+          <p>Realistic sleep patterns and tips for every age.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🧴</div>
+          <h3>Skincare & Hygiene</h3>
+          <p>What to apply, what to avoid, and how to care for delicate skin.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💉</div>
+          <h3>Vaccination Chart</h3>
+          <p>Clear schedule so you never miss an important shot.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚠️</div>
+          <h3>Red Flags & Emergencies</h3>
+          <p>Know exactly when to call the doctor — no second-guessing.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📋</div>
+          <h3>Printable Checklists</h3>
+          <p>Sleep log, shopping list, vaccination tracker & emergency card.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">❤️</div>
+          <h3>Parent Wellbeing</h3>
+          <p>Gentle reminders that taking care of yourself matters too.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INSIDE -->
+  <section class="inside">
+    <div class="container">
+      <h2 class="section-title">What’s Inside the Guide</h2>
+      <p class="section-sub">22 beautifully designed pages packed with practical value.</p>
+      <div class="inside-grid">
+        <div>
+          <ul class="inside-list">
+            <li><span class="check">✓</span> Complete First 24 Hours hour-by-hour timeline</li>
+            <li><span class="check">✓</span> Detailed chapter for every month (1 to 12)</li>
+            <li><span class="check">✓</span> Feeding guidance + foods to introduce & avoid</li>
+            <li><span class="check">✓</span> Sleep expectations and safe sleep tips</li>
+            <li><span class="check">✓</span> Milestone tracking for each month</li>
+            <li><span class="check">✓</span> Activity ideas to support development</li>
+            <li><span class="check">✓</span> Vaccination schedule</li>
+            <li><span class="check">✓</span> Red Flags — when to seek medical help</li>
+            <li><span class="check">✓</span> 5 ready-to-print checklists</li>
+            <li><span class="check">✓</span> Mom’s Tips on every key page</li>
+          </ul>
+        </div>
+        <div class="mockup">
+          <div class="mockup-placeholder">
+            <p style="font-size: 3rem; margin-bottom: 12px;">📘</p>
+            <strong>CuddleNine</strong><br>
+            Complete 0–12 Months<br>
+            Baby Care Guide<br><br>
+            <span style="font-size: 0.9rem;">22 Pages • Instant PDF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="benefits">
+    <div class="container">
+      <h2 class="section-title">Why Parents Love CuddleNine</h2>
+      <p class="section-sub">Designed for real life — not medical textbooks.</p>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <h3>😌 Peace of Mind</h3>
+          <p>Stop Googling at 2 AM. Clear answers for feeding, sleep, rashes, and milestones are right here.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>📅 Month-by-Month Clarity</h3>
+          <p>Know exactly what to expect and what to do in Month 1, Month 6, Month 12 — no confusion.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>🖨️ Printable & Practical</h3>
+          <p>Checklists you can actually use: shopping list, sleep log, vaccination tracker, emergency contacts.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>🎨 Beautiful & Easy to Read</h3>
+          <p>Soft colors, clear sections, and illustrated layout make it a joy to open even when you’re tired.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="buy">
+    <div class="container">
+      <h2 class="section-title">Get Instant Access</h2>
+      <p class="section-sub">One-time payment. Lifetime access. No subscriptions.</p>
+
+      <div class="price-card">
+        <div class="price-badge">BEST VALUE</div>
+        <h2>CuddleNine Complete Guide</h2>
+        <p style="color: var(--muted);">0–12 Months Baby Care E-book</p>
+        <div class="big-price">₹299 <span>only</span></div>
+        <p style="color: #9CA3AF; text-decoration: line-through; margin-bottom: 8px;">Regular price ₹999</p>
+
+        <ul class="price-features">
+          <li>✅ 22-page premium illustrated PDF</li>
+          <li>✅ First 24 Hours + all 12 months covered</li>
+          <li>✅ Vaccination chart & Red Flags section</li>
+          <li>✅ 5 printable checklists included</li>
+          <li>✅ Instant download after payment</li>
+          <li>✅ Lifetime access — keep it forever</li>
+        </ul>
+
+        <a href="#" class="cta-btn" style="display: block; text-align: center; font-size: 1.15rem; padding: 16px;">
+          Buy Now — Instant Download
+        </a>
+        <p class="guarantee" style="margin-top: 16px;">🔒 Secure payment &nbsp;•&nbsp; 100% digital delivery</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-sub">Quick answers to common questions.</p>
+
+      <div class="faq-item">
+        <h4>Is this a medical book?</h4>
+        <p>No. This is an educational practical guide for new parents. It is not a substitute for professional medical advice. Always consult your pediatrician for medical concerns.</p>
+      </div>
+      <div class="faq-item">
+        <h4>When will I receive the PDF?</h4>
+        <p>Immediately after successful payment. You will get a download link on the thank-you page and by email.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Can I print the checklists?</h4>
+        <p>Yes! The checklists (sleep log, shopping list, vaccination tracker, emergency card) are designed to be printed and used daily.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Is it only for Indian parents?</h4>
+        <p>The core guidance is universal. Vaccination section is based on common schedules — always cross-check with your local pediatrician.</p>
+      </div>
+      <div class="faq-item">
+        <h4>What if I have twins or a premature baby?</h4>
+        <p>The guide covers typical full-term development. For premature babies or special situations, follow your doctor’s personalized advice in addition to this guide.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <h2>Start Your Baby’s First Year with Confidence</h2>
+      <p>Join thousands of new parents who want clear, loving guidance — without the overwhelm.</p>
+      <a href="#buy" class="cta-btn">Get CuddleNine Now — ₹299</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><strong>CuddleNine</strong> · Little Care, Big Love</p>
+    <p style="margin-top: 8px;">Educational guide only. Not a substitute for professional medical advice.</p>
+    <p style="margin-top: 12px; font-size: 0.8rem;">© 2026 CuddleNine. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
